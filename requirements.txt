@@ -1,0 +1,2 @@
+# Laptop Health Monitor Agent Dependencies
+# Built using standard Python 3.12 library modules. No external packages required.

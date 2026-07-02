@@ -1,0 +1,21 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Environment
+.env
+venv/
+env/
+ENV/
+env.bak/
+venv.bak/
+
+# Agent State and Logs
+audit_log.md
+state.json
+
+# IDE
+.vscode/
+.idea/

@@ -1,0 +1,23 @@
+{
+  "thresholds": {
+    "cpu_warning": 70.0,
+    "cpu_critical": 90.0,
+    "memory_warning": 85.0,
+    "memory_critical": 95.0,
+    "storage_free_warning": 20.0,
+    "storage_free_critical": 10.0
+  },
+  "cleanup_targets": [
+    "C:\\Windows\\Temp",
+    "AppData\\Local\\Temp"
+  ],
+  "monitored_services": [
+    "wuauserv",
+    "Spooler",
+    "Dhcp",
+    "BFE",
+    "LanmanWorkstation",
+    "EventLog"
+  ],
+  "log_file_path": "audit_log.md"
+}
