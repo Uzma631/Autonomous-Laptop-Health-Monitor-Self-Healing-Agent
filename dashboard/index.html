@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PulseCheck | Laptop Health Monitor</title>
+    <!-- Use a modern Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-elements">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+    </div>
+
+    <div class="container">
+        <header>
+            <div class="header-left">
+                <div class="logo-shield"></div>
+                <h1>PulseCheck <span class="subtitle">Autonomous Health Monitor</span></h1>
+            </div>
+            <div class="header-right">
+                <button id="repair-btn" class="btn primary-btn">
+                    <span class="btn-text">Auto-Heal System</span>
+                    <div class="loader-spinner hidden"></div>
+                </button>
+                <button id="refresh-btn" class="btn secondary-btn">Scan Now</button>
+            </div>
+        </header>
+
+        <main id="dashboard" class="loading-state">
+            <div class="loading-overlay">
+                <div class="loader-spinner large"></div>
+                <p>Running deep system diagnostics...</p>
+            </div>
+
+            <!-- Main Score Card -->
+            <section class="card glass hero-card">
+                <div class="score-container">
+                    <svg class="progress-ring" width="160" height="160">
+                        <circle class="progress-ring__circle-bg" stroke="rgba(255,255,255,0.1)" stroke-width="12" fill="transparent" r="70" cx="80" cy="80"/>
+                        <circle id="score-ring" class="progress-ring__circle" stroke="#00f3ff" stroke-width="12" fill="transparent" r="70" cx="80" cy="80"/>
+                    </svg>
+                    <div class="score-text">
+                        <span id="overall-score">0</span>
+                        <span class="score-label">/100</span>
+                    </div>
+                </div>
+                <div class="hero-details">
+                    <h2 id="overall-rating">Analyzing...</h2>
+                    <p class="status-msg" id="status-msg">System is being evaluated.</p>
+                </div>
+            </section>
+
+            <!-- Metrics Grid -->
+            <div class="metrics-grid">
+                <!-- CPU -->
+                <div class="card glass metric-card">
+                    <div class="metric-header">
+                        <h3>CPU Core</h3>
+                        <span id="cpu-score-badge" class="badge">--</span>
+                    </div>
+                    <div class="metric-value">
+                        <span id="cpu-value">0</span>%
+                    </div>
+                    <div class="progress-bar-bg">
+                        <div id="cpu-bar" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Memory -->
+                <div class="card glass metric-card">
+                    <div class="metric-header">
+                        <h3>Memory (RAM)</h3>
+                        <span id="ram-score-badge" class="badge">--</span>
+                    </div>
+                    <div class="metric-value">
+                        <span id="ram-value">0</span>%
+                    </div>
+                    <div class="metric-subtext" id="ram-subtext">Free: -- GB</div>
+                    <div class="progress-bar-bg">
+                        <div id="ram-bar" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+
+                <!-- Storage -->
+                <div class="card glass metric-card">
+                    <div class="metric-header">
+                        <h3>C: Drive Storage</h3>
+                        <span id="disk-score-badge" class="badge">--</span>
+                    </div>
+                    <div class="metric-value">
+                        <span id="disk-value">0</span>%
+                    </div>
+                    <div class="metric-subtext" id="disk-subtext">Free: -- GB</div>
+                    <div class="progress-bar-bg">
+                        <div id="disk-bar" class="progress-bar-fill"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Detailed Breakdowns -->
+            <div class="details-grid">
+                <!-- Hardware Drivers -->
+                <div class="card glass list-card">
+                    <h3>Hardware Drivers</h3>
+                    <div class="stat-row">
+                        <span>Total Scanned:</span>
+                        <strong id="drvs-total">0</strong>
+                    </div>
+                    <div class="stat-row error">
+                        <span>Failed Devices:</span>
+                        <strong id="drvs-failed">0</strong>
+                    </div>
+                    <div class="stat-row warning">
+                        <span>Missing Drivers:</span>
+                        <strong id="drvs-missing">0</strong>
+                    </div>
+                    <div class="stat-row warning">
+                        <span>Conflicts:</span>
+                        <strong id="drvs-conflict">0</strong>
+                    </div>
+                </div>
+
+                <!-- System Services & Updates -->
+                <div class="card glass list-card">
+                    <h3>System Integrity</h3>
+                    <div class="stat-row">
+                        <span>Disk SMART Status:</span>
+                        <strong id="smart-status" class="success-text">OK</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Stopped Services:</span>
+                        <strong id="services-stopped">0</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Windows Updates:</span>
+                        <strong id="updates-pending">0 Pending</strong>
+                    </div>
+                    <div class="stat-row">
+                        <span>Security Defender:</span>
+                        <strong id="security-status" class="success-text">Active</strong>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>

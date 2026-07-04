@@ -6,6 +6,10 @@ An autonomous diagnostic and repair agent for Windows laptops, written in Python
 
 The Laptop Health Monitor Agent proactively monitors system health (CPU, Memory, Storage, Drivers, Network, Services, Windows Updates, and Security) and autonomously repairs common issues. It incorporates strict safety guardrails to ensure no destructive actions are taken without user approval.
 
+## Dashboard Preview
+
+![PulseCheck Dashboard](assets/dashboard.png)
+
 ## Requirements
 
 - Windows 10 or 11

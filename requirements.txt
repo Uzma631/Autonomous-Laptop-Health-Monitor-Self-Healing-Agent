@@ -1,2 +1,5 @@
 # Laptop Health Monitor Agent Dependencies
-# Built using standard Python 3.12 library modules. No external packages required.
+# Built using standard Python 3.12 library modules. No external packages required for CLI.
+# Web Dashboard Dependencies
+Flask==3.0.3
+flask-cors==4.0.1
